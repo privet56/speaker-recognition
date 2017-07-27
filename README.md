@@ -1,13 +1,9 @@
+# SPEAKER RECOGNITION with Python 2.7, scikit-learn & Anaconda2
+# THIS VERSION WORKS ON WINDOWS!
+
 ## About
 
 This is a [Speaker Recognition](https://en.wikipedia.org/wiki/Speaker_recognition) system with GUI.
-
-For more details of this project, please see:
-
-+ Our [presentation slides](https://github.com/ppwwyyxx/speaker-recognition/raw/master/doc/Presentation.pdf)
-+ Our [complete report](https://github.com/ppwwyyxx/speaker-recognition/raw/master/doc/Final-Report-Complete.pdf)
-
-## ThIS VERSION WORKS ON WINDOWS!
 
 ## Dependencies
 
@@ -36,6 +32,11 @@ Run `make -C src/gmm` to compile our fast gmm implementation. Require gcc >= 4.7
 
 It will be used as default, if successfully compiled.
 
+For more details of this project, please see:
+
++ Our [presentation slides](https://github.com/ppwwyyxx/speaker-recognition/raw/master/doc/Presentation.pdf)
++ Our [complete report](https://github.com/ppwwyyxx/speaker-recognition/raw/master/doc/Final-Report-Complete.pdf)
+
 ## Algorithms Used
 
 _Voice Activity Detection_(VAD):
@@ -50,17 +51,6 @@ _Model_:
 + [Universal Background Model](http://www.sciencedirect.com/science/article/pii/S1051200499903615) (UBM)
 + Continuous [Restricted Boltzman Machine](https://en.wikipedia.org/wiki/Restricted_Boltzmann_machine) (CRBM)
 + [Joint Factor Analysis](http://speech.fit.vutbr.cz/software/joint-factor-analysis-matlab-demo) (JFA)
-
-## GUI Demo
-
-Our GUI not only has basic functionality for recording, enrollment, training and testing, but also has a visualization of real-time speaker recognition:
-
-![graph](https://github.com/ppwwyyxx/speaker-recognition/raw/master/doc/Final-Report-Complete/img/gui-graph.png)
-
-You can See our [demo video](https://github.com/ppwwyyxx/speaker-recognition/raw/master/demo.avi) (in Chinese).
-Note that real-time speaker recognition is extremely hard, because we only use corpus of about 1 second length to identify the speaker.
-Therefore the real-time system doesn't work very perfect. Also the GUI part is quite hacky for demo purpose and may
-not work as smoothly as expected.
 
 ## Command Line Tools
 ```sh
@@ -90,3 +80,15 @@ Examples:
 ## Example:
 See 'run.bat'
 ![win](https://raw.githubusercontent.com/privet56/speaker-recognition/master/run.on.win.png)
+
+## GUI Demo
+
+Our GUI not only has basic functionality for recording, enrollment, training and testing, but also has a visualization of real-time speaker recognition:
+
+![graph](https://github.com/ppwwyyxx/speaker-recognition/raw/master/doc/Final-Report-Complete/img/gui-graph.png)
+
+You can See our [demo video](https://github.com/ppwwyyxx/speaker-recognition/raw/master/demo.avi) (in Chinese).
+Note that real-time speaker recognition is extremely hard, because we only use corpus of about 1 second length to identify the speaker.
+Therefore the real-time system doesn't work very perfect. Also the GUI part is quite hacky for demo purpose and may
+not work as smoothly as expected.
+

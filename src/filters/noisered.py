@@ -10,7 +10,8 @@ import os
 from random import Random
 from silence import remove_silence
 
-from utils import monophonic
+from gui.utils import monophonic
+#from utils import monophonic
 
 NOISE_WAV = "/tmp/noise.wav"
 NOISE_MODEL = "/tmp/noise.prof"

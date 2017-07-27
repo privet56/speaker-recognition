@@ -4,11 +4,13 @@
 # Date: Sun Feb 22 22:36:46 2015 +0800
 # Author: Yuxin Wu <ppwwyyxxc@gmail.com>
 
+import math
 import argparse
 import sys
 import glob
 import os
 import itertools
+import qtpy
 import scipy.io.wavfile as wavfile
 
 sys.path.append(os.path.join(
@@ -77,8 +79,12 @@ def task_predict(input_files, input_model):
     m = ModelInterface.load(input_model)
     for f in glob.glob(os.path.expanduser(input_files)):
         fs, signal = read_wav(f)
-        label = m.predict(fs, signal)
-        print f, '->', label
+        #label = m.predict(fs, signal)
+        (label, score) = m.predict_with_score(fs, signal)
+        if math.fabs(score) < 0.13:
+            print f, '->', label, ' score:', score
+        else:
+            print f, 'NO SPEAKER RECOGNIZED   (', label, ' score:', score,')'
 
 if __name__ == '__main__':
     global args

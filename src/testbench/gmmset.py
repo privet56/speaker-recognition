@@ -98,6 +98,12 @@ class GMMSetPyGMM(GMMSet):
         #print scores, p[-1] - p[-2]
         return self.y[max(enumerate(scores), key=operator.itemgetter(1))[0]]
 
+    def predict_one_with_score(self, x):
+        scores = [gmm.score_all(x) / len(x) for gmm in self.gmms]
+        p = sorted(scores)
+        #print scores, p[-1] - p[-2]
+        return self.y[max(enumerate(scores), key=operator.itemgetter(1))]
+
     def before_pickle(self):
         self.gmms = [x.dumps() for x in self.gmms]
 

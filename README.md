@@ -7,13 +7,21 @@ For more details of this project, please see:
 + Our [presentation slides](https://github.com/ppwwyyxx/speaker-recognition/raw/master/doc/Presentation.pdf)
 + Our [complete report](https://github.com/ppwwyyxx/speaker-recognition/raw/master/doc/Final-Report-Complete.pdf)
 
+## ThIS VERSION WORKS ON WINDOWS!
+
 ## Dependencies
 
++ Windows: Anaconda with Python 2.7
 + [scikit-learn](http://scikit-learn.org/)
+	(included in Anaconda2)
 + [scikits.talkbox](http://scikits.appspot.com/talkbox)
+	(on windows, it needs a VC++ compiler, download "VCForPython27.msi"!)
 + [pyssp](https://pypi.python.org/pypi/pyssp)
+	(command: pip install pyssp)
 + [PyQt4](http://sourceforge.net/projects/pyqt/)
+	(not needed on windows, as included in Anaconda2)
 + [PyAudio](http://people.csail.mit.edu/hubert/pyaudio/)
+	(prerequisite on Linux: sudo apt-get install portaudio19-dev)
 + (Optional)Python bindings for [bob](http://idiap.github.io/bob/):
 	+ install blitz, openblas, boost
 	+ `pip install --user bob.extension bob.blitz bob.core bob.sp bob.ap`
@@ -78,3 +86,7 @@ Examples:
     Predict:
     ./speaker-recognition.py -t predict -i "./*.wav" -m model.out
 ```
+
+## Example:
+See 'run.bat'
+![win](https://raw.githubusercontent.com/privet56/speaker-recognition/master/run.on.win.png)

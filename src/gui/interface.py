@@ -93,17 +93,29 @@ class ModelInterface(object):
             return None
         return self.gmmset.predict_one(feat)
 
+    def predict_with_score(self, fs, signal):
+        """
+        return a label (name)
+        """
+        try:
+            feat = mix_feature((fs, signal))
+        except Exception as e:
+            print tb.format_exc()
+            return None
+        # gmmset = GMMSet() = gmmset.GMMSetPyGMM
+        return self.gmmset.predict_one_with_score(feat)
+
     def dump(self, fname):
         """ dump all models to file"""
         self.gmmset.before_pickle()
-        with open(fname, 'w') as f:
+        with open(fname, 'wb') as f:
             pickle.dump(self, f, -1)
         self.gmmset.after_pickle()
 
     @staticmethod
     def load(fname):
         """ load from a dumped model file"""
-        with open(fname, 'r') as f:
+        with open(fname, 'rb') as f:
             R = pickle.load(f)
             R.gmmset.after_pickle()
             return R
